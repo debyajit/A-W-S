@@ -1,3 +1,19 @@
+
+
+To load the sample data, you must provide authentication for your cluster to access Amazon S3 on your behalf. You can provide either role-based authentication or key-based authentication. We recommend using role-based authentication
+Load data from S3 to table users
+copy users from 's3://awssampledbuswest2/tickit/allusers_pipe.txt' 
+credentials 'aws_iam_role=arn:aws:iam::700740719369:role/DEB_S3_RS_ACCESS' 
+delimiter '|' region 'us-west-2';
+
+
+
+
+
+
+
+
+
 create table users(
 	userid integer not null distkey sortkey,
 	username char(8),
